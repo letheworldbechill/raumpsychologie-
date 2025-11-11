@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raumpsychologie v3 – Klarheit ohne Kampf</title>
+  <meta name="description" content="Eine App für innere und äußere Ordnung, emotionale Selbstführung und friedliche Abgrenzung." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b0c0e" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🌿 Raumpsychologie v3</h1>
+
+    <nav id="top-nav" class="top-nav">
+      <button data-route="/intro" data-i18n="nav_intro">Intro</button>
+      <button data-route="/wohnung" data-i18n="nav_wohnung">Wohnung</button>
+      <button data-route="/raumscan" data-i18n="nav_raumscan">RaumScan</button>
+      <button data-route="/resonanz" data-i18n="nav_resonanz">Resonanz</button>
+      <button data-route="/bindung" data-i18n="nav_bindung">Bindung</button>
+      <button data-route="/restladung" data-i18n="nav_restladung">Restladung</button>
+      <button data-route="/minireset" data-i18n="nav_minireset">Mini-Reset</button>
+      <button data-route="/musterarchiv" data-i18n="nav_musterarchiv">Archiv</button>
+      <button data-route="/rahmung" data-i18n="nav_rahmung">Rahmung</button>
+      <button data-route="/diplomatie" title="Carnegie-Exit PDF/Print" data-i18n="nav_diplomatie">Diplomatie</button>
+    </nav>
+
+    <div class="toolbar">
+      <select id="lang" title="Sprache">
+        <option value="de">DE</option>
+        <option value="en">EN</option>
+      </select>
+      <button id="theme-toggle" title="Theme">☀︎/🌙</button>
+      <button id="btn-export" data-i18n="btn_export">Export</button>
+      <button id="btn-import" data-i18n="btn_import">Import</button>
+      <input type="file" id="file-import" accept="application/json" style="display:none" />
+    </div>
+  </header>
+
+  <main id="view" class="view"></main>
+
+  <footer class="app-footer">
+    <small>Offline-fähig · Keine Tracker · v3</small>
+  </footer>
+
+  <!-- App -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
