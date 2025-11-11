@@ -18,9 +18,11 @@ export const State = {
     } catch (e) { console.warn("State load failed", e); }
   },
   save() {
-    try { localStorage.setItem(LS_KEY, JSON.stringify(this.data)); }
-    catch (e) { console.warn("State save failed", e); }
-  },
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify(this.data));
+    if (window.showSaveIndicator) window.showSaveIndicator();
+  } catch (e) { console.warn("State save failed", e); }
+},
   newSession(kind = "generic") {
     const s = { id: crypto.randomUUID(), kind, createdAt: Date.now(), notes: {}, results: {} };
     this.data.sessions.unshift(s); this.save(); return s;
