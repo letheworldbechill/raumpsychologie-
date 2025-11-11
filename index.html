@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🌿 Raumpsychologie v3 – Flow Mode</title>
+  <title>Raumpsychologie v3 – Klarheit ohne Kampf</title>
   <meta name="description" content="Eine App für innere und äußere Ordnung, emotionale Selbstführung und friedliche Abgrenzung." />
   <link rel="manifest" href="manifest.webmanifest" />
   <meta name="theme-color" content="#0b0c0e" />
@@ -12,28 +12,61 @@
 <body>
   <header class="app-header">
     <h1>🌿 Raumpsychologie v3</h1>
-    <div class="toolbar">
-      <select id="lang" title="Sprache">
+
+    <nav id="top-nav" class="top-nav" aria-label="Hauptnavigation">
+      <button data-route="/intro" data-i18n="nav_intro" class="active">Intro</button>
+      <button data-route="/wohnung" data-i18n="nav_wohnung">Wohnung</button>
+      <button data-route="/raumscan" data-i18n="nav_raumscan">RaumScan</button>
+      <button data-route="/resonanz" data-i18n="nav_resonanz">Resonanz</button>
+      <button data-route="/bindung" data-i18n="nav_bindung">Bindung</button>
+      <button data-route="/restladung" data-i18n="nav_restladung">Restladung</button>
+      <button data-route="/minireset" data-i18n="nav_minireset">Mini-Reset</button>
+      <button data-route="/musterarchiv" data-i18n="nav_musterarchiv">Archiv</button>
+      <button data-route="/rahmung" data-i18n="nav_rahmung">Rahmung</button>
+      <button data-route="/diplomatie" title="Carnegie-Exit PDF/Print" data-i18n="nav_diplomatie">Diplomatie</button>
+    </nav>
+
+    <div class="toolbar" role="toolbar" aria-label="Werkzeuge">
+      <select id="lang" title="Sprache" aria-label="Sprache wählen">
         <option value="de">DE</option>
         <option value="en">EN</option>
       </select>
-      <button id="theme-toggle" title="Theme">☀︎/🌙</button>
-      <button id="btn-export" data-i18n="btn_export">⬇︎ Export</button>
-      <button id="btn-import" data-i18n="btn_import">⬆︎ Import</button>
+      <button id="theme-toggle" title="Theme" aria-label="Theme umschalten">☀︎/🌙</button>
+      <button id="btn-export" data-i18n="btn_export" title="Exportieren" aria-label="Exportieren">⬇︎ Export</button>
+      <button id="btn-import" data-i18n="btn_import" title="Importieren" aria-label="Importieren">⬆︎ Import</button>
       <input type="file" id="file-import" accept="application/json" hidden />
     </div>
   </header>
 
-  <main id="view" class="view flow"></main>
+  <main id="view" class="view flow" tabindex="-1" aria-live="polite"></main>
 
+  <!-- Flow Mode Controls -->
   <footer class="flow-controls">
-    <button id="prev" class="nav-btn">← Zurück</button>
-    <div class="progress">
-      <div id="progress-bar"></div>
+    <button id="prev" class="nav-btn" aria-label="Zurück">←</button>
+
+    <div class="flow-progress">
+      <div class="flow-steps">
+        <div class="step" data-route="/intro" title="Intro">🌱</div>
+        <div class="step" data-route="/wohnung" title="Wohnung">🏠</div>
+        <div class="step" data-route="/raumscan" title="RaumScan">📡</div>
+        <div class="step" data-route="/resonanz" title="Resonanz">💫</div>
+        <div class="step" data-route="/bindung" title="Bindung">💞</div>
+        <div class="step" data-route="/restladung" title="Restladung">⚡</div>
+        <div class="step" data-route="/minireset" title="Mini-Reset">🌀</div>
+        <div class="step" data-route="/musterarchiv" title="Archiv">🗂️</div>
+        <div class="step" data-route="/rahmung" title="Rahmung">🪞</div>
+        <div class="step" data-route="/diplomatie" title="Diplomatie">🤝</div>
+      </div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
     </div>
-    <button id="next" class="nav-btn">Weiter →</button>
+
+    <button id="next" class="nav-btn" aria-label="Weiter">→</button>
+  </footer>
+
+  <footer class="app-footer">
+    <small>Offline-fähig · Keine Tracker · v3</small>
   </footer>
 
   <script type="module" src="app.js"></script>
 </body>
-</html>
+  </html>
