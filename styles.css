@@ -309,3 +309,66 @@ hr.s {
     font-size: .95rem;
   }
 }
+/* ---------- FLOW MODE ---------- */
+.flow {
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+.flow.fade-enter {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.flow.fade-exit {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.flow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: sticky;
+  bottom: 0;
+  background: var(--panel);
+  border-top: 1px solid var(--outline);
+  padding: .6rem 1rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -2px 8px var(--shadow);
+  z-index: 99;
+}
+
+.nav-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: .6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.nav-btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.nav-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.progress {
+  flex: 1;
+  height: .4rem;
+  background: var(--outline);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width .4s ease;
+   }
