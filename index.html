@@ -9,64 +9,77 @@
   <meta name="theme-color" content="#0b0c0e" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- ========== HEADER ========== -->
   <header class="app-header">
     <h1>🌿 Raumpsychologie v3</h1>
 
-    <nav id="top-nav" class="top-nav" aria-label="Hauptnavigation">
-      <button data-route="/intro" data-i18n="nav_intro" class="active">Intro</button>
-      <button data-route="/wohnung" data-i18n="nav_wohnung">Wohnung</button>
-      <button data-route="/raumscan" data-i18n="nav_raumscan">RaumScan</button>
-      <button data-route="/resonanz" data-i18n="nav_resonanz">Resonanz</button>
-      <button data-route="/bindung" data-i18n="nav_bindung">Bindung</button>
-      <button data-route="/restladung" data-i18n="nav_restladung">Restladung</button>
-      <button data-route="/minireset" data-i18n="nav_minireset">Mini-Reset</button>
-      <button data-route="/musterarchiv" data-i18n="nav_musterarchiv">Archiv</button>
-      <button data-route="/rahmung" data-i18n="nav_rahmung">Rahmung</button>
-      <button data-route="/diplomatie" title="Carnegie-Exit PDF/Print" data-i18n="nav_diplomatie">Diplomatie</button>
-    </nav>
-
-    <div class="toolbar" role="toolbar" aria-label="Werkzeuge">
-      <select id="lang" title="Sprache" aria-label="Sprache wählen">
+    <div class="toolbar">
+      <button id="menu-toggle" class="menu-btn" title="Menü">☰</button>
+      <select id="lang" title="Sprache">
         <option value="de">DE</option>
         <option value="en">EN</option>
       </select>
-      <button id="theme-toggle" title="Theme" aria-label="Theme umschalten">☀︎/🌙</button>
-      <button id="btn-export" data-i18n="btn_export" title="Exportieren" aria-label="Exportieren">⬇︎ Export</button>
-      <button id="btn-import" data-i18n="btn_import" title="Importieren" aria-label="Importieren">⬆︎ Import</button>
-      <input type="file" id="file-import" accept="application/json" hidden />
+      <button id="theme-toggle" title="Theme">☀︎ / 🌙</button>
+      <button id="btn-export" data-i18n="btn_export">Export</button>
+      <button id="btn-import" data-i18n="btn_import">Import</button>
+      <input type="file" id="file-import" accept="application/json" style="display:none" />
     </div>
+
+    <div id="save-blink" class="save-blink" title="Gespeichert">💾</div>
   </header>
 
-  <main id="view" class="view flow" tabindex="-1" aria-live="polite"></main>
+  <!-- ========== MAIN VIEW ========== -->
+  <main id="view" class="view"></main>
 
-  <!-- Flow Mode Controls -->
-  <footer class="flow-controls">
-    <button id="prev" class="nav-btn" aria-label="Zurück">←</button>
-
-    <div class="flow-progress">
-      <div class="flow-steps">
-        <div class="step" data-route="/intro" title="Intro">🌱</div>
-        <div class="step" data-route="/wohnung" title="Wohnung">🏠</div>
-        <div class="step" data-route="/raumscan" title="RaumScan">📡</div>
-        <div class="step" data-route="/resonanz" title="Resonanz">💫</div>
-        <div class="step" data-route="/bindung" title="Bindung">💞</div>
-        <div class="step" data-route="/restladung" title="Restladung">⚡</div>
-        <div class="step" data-route="/minireset" title="Mini-Reset">🌀</div>
-        <div class="step" data-route="/musterarchiv" title="Archiv">🗂️</div>
-        <div class="step" data-route="/rahmung" title="Rahmung">🪞</div>
-        <div class="step" data-route="/diplomatie" title="Diplomatie">🤝</div>
+  <!-- ========== FLOW FOOTER ========== -->
+  <footer class="flow-nav">
+    <button id="prev" class="flow-btn" aria-label="Zurück">◀</button>
+    <div class="flow-progress" aria-label="Fortschritt">
+      <div id="progress-bar" class="progress-bar"></div>
+      <div class="steps" aria-hidden="true">
+        <div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div>
+        <div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div>
       </div>
-      <div class="progress-track"><div id="progress-bar"></div></div>
     </div>
-
-    <button id="next" class="nav-btn" aria-label="Weiter">→</button>
+    <button id="next" class="flow-btn" aria-label="Weiter">▶</button>
   </footer>
 
+  <!-- ========== HAMBURGER MENU OVERLAY ========== -->
+  <nav id="nav-overlay" class="nav-overlay" hidden>
+    <div class="nav-drawer">
+      <div class="nav-header">
+        <h2>Navigation</h2>
+        <button id="nav-close" class="nav-close" title="Schließen">×</button>
+      </div>
+      <ul class="nav-main">
+        <li><button data-route="/intro" data-i18n="nav_intro">Intro</button></li>
+        <li><button data-route="/wohnung" data-i18n="nav_wohnung">Wohnung</button></li>
+        <li><button data-route="/raumscan" data-i18n="nav_raumscan">RaumScan</button></li>
+        <li><button data-route="/resonanz" data-i18n="nav_resonanz">Resonanz</button></li>
+        <li><button data-route="/bindung" data-i18n="nav_bindung">Bindung</button></li>
+        <li><button data-route="/restladung" data-i18n="nav_restladung">Restladung</button></li>
+        <li><button data-route="/minireset" data-i18n="nav_minireset">Mini-Reset</button></li>
+        <li><button data-route="/musterarchiv" data-i18n="nav_musterarchiv">Archiv</button></li>
+        <li><button data-route="/rahmung" data-i18n="nav_rahmung">Rahmung</button></li>
+        <li><button data-route="/diplomatie" data-i18n="nav_diplomatie">Diplomatie</button></li>
+      </ul>
+
+      <hr class="nav-divider" />
+
+      <div class="nav-settings">
+        <h3>Einstellungen</h3>
+        <button data-route="/settings">⚙️ Einstellungen öffnen</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== FOOTER INFO ========== -->
   <footer class="app-footer">
     <small>Offline-fähig · Keine Tracker · v3</small>
   </footer>
 
   <script type="module" src="app.js"></script>
 </body>
-  </html>
+              </html>

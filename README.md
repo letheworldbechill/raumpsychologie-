@@ -1,38 +1,37 @@
 # 🌿 Raumpsychologie v3 – Klarheit ohne Kampf
 
-Eine App für **innere und äußere Ordnung**, **emotionale Selbstführung** und **friedliche Abgrenzung**.  
-Minimalistisch, **offline-fähig (PWA)**, **zweisprachig (DE/EN)**, **kein Tracking**, **lokale Speicherung**.
+**Eine App für innere und äußere Ordnung, emotionale Selbstführung und friedliche Abgrenzung.**  
+Offline-fähig · zweisprachig (DE/EN) · minimalistisch · PWA-Ready
 
-## Grundidee
-- **Beobachten statt bewerten**
-- **Ordnen statt analysieren**
-- **Verlassen statt kämpfen**
+---
 
-Sie ist kein psychologischer Test, sondern ein Training in Bewusstheit und Selbstführung.
+## ✨ Idee
 
-## Module
-- **Intro** – „Realität oder Reaktion?“ (Achtsames Startfenster)
-- **Wohnung Check** – 4 Räume × 3 Skalen + Verlauf
-- **RaumScan** – tägliches Barometer + 7-Tage Verlauf
-- **Resonanz-Check** – 6 Fragen (1–5) mit Farbauswertung
-- **Bindungs-Reality-Check** – Lovebombing/Spiegel, 10 Kernfragen, 15 Ja/Nein, Reflexion
-- **Restladung** – Intensität + Hinweise
-- **Mini-Reset** – Kurzprogramm (4-7-8)
-- **Muster-Archiv** – Wiederkehrende Muster notieren
-- **Rahmung** – Öffentliche & private Rahmung + Ethik
-- **Diplomatie** – Druckansicht „Carnegie-Exit“
+**Raumpsychologie v3** ist kein Tool zur Kontrolle –  
+sondern ein Begleiter für innere Orientierung.  
+Sie hilft, Räume und Beziehungen klarer zu sehen,  
+ohne Kampf, ohne Analysezwang, mit ruhiger Präsenz.
 
-## Technik
-- **HTML + CSS + Vanilla JS**
-- **PWA**: `manifest.webmanifest`, `service-worker.js`
-- **LocalStorage** (alle Daten bleiben auf dem Gerät)
-- **Light/Dark-Modus** (auto, Schalter in der Toolbar)
-- **Zwei Sprachen** (DE Standard, EN optional)
+> Beobachten statt bewerten.  
+> Ordnen statt analysieren.  
+> Verlassen statt kämpfen.
 
-## Nutzung
-1. Repo auf **GitHub Pages** veröffentlichen (Branch `main`, Root).  
-2. Seite aufrufen → Service Worker installiert → App läuft **offline**.  
-3. Export/Import für Sicherung unter „Export/Import“.
+---
 
-## Hinweis
-Kein Ersatz für Therapie; dient der Selbstreflexion und Selbstführung.
+## 🌍 Funktionen
+
+- 🧭 **Module** für Wohnung, Resonanz, Bindung, Restladung, Reset u.v.m.  
+- 💾 **Lokale Speicherung** – keine Cloud, keine Tracker  
+- 🌗 **Light / Dark / Auto Theme**  
+- 🌐 **Zweisprachig** (Deutsch / Englisch)  
+- 📦 **Export / Import** der Daten als JSON  
+- 🪶 **PWA-fähig**: installierbar, offline nutzbar  
+- 💚 **Start-Overlay** für einen klaren Einstieg  
+- 🔔 **Auto-Save-Indikator & Blink-Feedback** bei jeder Speicherung  
+- 🧩 **Flow-Mode**: intuitive Schrittführung mit Fortschrittsanzeige  
+
+---
+
+## 🧱 Projektstruktur
+
+Alle Dateien liegen direkt im Repository-Root (keine Unterordner):
