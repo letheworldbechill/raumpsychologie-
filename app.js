@@ -23,7 +23,50 @@ route("/minireset", renderMiniReset);
 route("/musterarchiv", renderMusterArchiv);
 route("/rahmung", renderRahmung);
 route("/diplomatie", renderDiplomatie);
+// --- FLOW MODE NAVIGATION ---
+const flowOrder = [
+  "/intro",
+  "/wohnung",
+  "/raumscan",
+  "/resonanz",
+  "/bindung",
+  "/restladung",
+  "/minireset",
+  "/musterarchiv",
+  "/rahmung",
+  "/diplomatie"
+];
 
+let currentIndex = 0;
+
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const progressBar = document.getElementById("progress-bar");
+
+function updateFlowUI() {
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex === flowOrder.length - 1;
+  progressBar.style.width = `${((currentIndex + 1) / flowOrder.length) * 100}%`;
+}
+
+function navigateFlow(dir) {
+  const view = document.getElementById("view");
+  view.classList.add(dir === 1 ? "fade-enter" : "fade-exit");
+
+  setTimeout(() => {
+    currentIndex = Math.max(0, Math.min(flowOrder.length - 1, currentIndex + dir));
+    window.history.pushState({}, "", flowOrder[currentIndex]);
+    renderRoute();
+    updateFlowUI();
+    view.classList.remove("fade-enter", "fade-exit");
+  }, 200);
+}
+
+nextBtn.addEventListener("click", () => navigateFlow(1));
+prevBtn.addEventListener("click", () => navigateFlow(-1));
+
+// Initialer Zustand
+updateFlowUI();
 // Export/Import/Theme/Lang
 const btnExport = document.getElementById("btn-export");
 const btnImport = document.getElementById("btn-import");
