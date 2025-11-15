@@ -74,7 +74,7 @@ function showStartOverlay() {
       <button id="start-btn" class="cta">Start</button>
       <small>Offline · Zwei Sprachen · Light/Dark</small>
     </div>
-  `;
+  ;
   document.body.appendChild(overlay);
 
   document.getElementById("start-btn").addEventListener("click", () => {
