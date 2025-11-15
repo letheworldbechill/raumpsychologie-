@@ -58,34 +58,7 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-/* ---------- START OVERLAY ---------- */
-function showStartOverlay() {
-  if (localStorage.getItem("rpv3.overlayShown")) {
-    renderRoute();
-    return;
-  }
 
-  const overlay = document.createElement("div");
-  overlay.className = "start-overlay";
-  overlay.innerHTML = `
-    <div class="start-card">
-      <h1>🌿 Raumpsychologie v3</h1>
-      <p>Klarheit ohne Kampf</p>
-      <button id="start-btn" class="cta">Start</button>
-      <small>Offline · Zwei Sprachen · Light/Dark</small>
-    </div>
-  ;
-  document.body.appendChild(overlay);
-
-  document.getElementById("start-btn").addEventListener("click", () => {
-    overlay.classList.add("fade-out");
-    localStorage.setItem("rpv3.overlayShown", "true");
-    setTimeout(() => {
-      overlay.remove();
-      renderRoute();
-    }, 600);
-  });
-}
 
 /* ---------- SAVE INDICATOR ---------- */
 export function showSaveIndicator() {
