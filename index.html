@@ -10,7 +10,32 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body> <!-- Hamburger Button -->
+<button id="navToggle" class="hamburger">
+  ☰
+</button>
+
+<!-- Overlay + Drawer -->
+<div id="drawerOverlay" class="overlay"></div>
+
+<nav id="drawer" class="drawer">
+  <button id="closeDrawer" class="close-btn">✕</button>
+
+  <ul class="drawer-nav">
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#wohnung">Wohnung</a></li>
+    <li><a href="#raumscan">RaumScan</a></li>
+    <li><a href="#resonanz">Resonanz</a></li>
+    <li><a href="#bindung">Bindung</a></li>
+    <li><a href="#restladung">Restladung</a></li>
+    <li><a href="#mini-reset">Mini-Reset</a></li>
+    <li><a href="#archiv">Archiv</a></li>
+    <li><a href="#rahmung">Rahmung</a></li>
+    <li><a href="#diplomatie">Diplomatie</a></li>
+  </ul>
+</nav>
+
+  
   <!-- ========== HEADER ========== -->
   <header class="app-header">
     <h1>🌿 Raumpsychologie v3</h1>
@@ -46,34 +71,6 @@
     <button id="next" class="flow-btn" aria-label="Weiter">▶</button>
   </footer>
 
-  <!-- ========== HAMBURGER MENU OVERLAY ========== -->
-  <nav id="nav-overlay" class="nav-overlay" hidden>
-    <div class="nav-drawer">
-      <div class="nav-header">
-        <h2>Navigation</h2>
-        <button id="nav-close" class="nav-close" title="Schließen">×</button>
-      </div>
-      <ul class="nav-main">
-        <li><button data-route="/intro" data-i18n="nav_intro">Intro</button></li>
-        <li><button data-route="/wohnung" data-i18n="nav_wohnung">Wohnung</button></li>
-        <li><button data-route="/raumscan" data-i18n="nav_raumscan">RaumScan</button></li>
-        <li><button data-route="/resonanz" data-i18n="nav_resonanz">Resonanz</button></li>
-        <li><button data-route="/bindung" data-i18n="nav_bindung">Bindung</button></li>
-        <li><button data-route="/restladung" data-i18n="nav_restladung">Restladung</button></li>
-        <li><button data-route="/minireset" data-i18n="nav_minireset">Mini-Reset</button></li>
-        <li><button data-route="/musterarchiv" data-i18n="nav_musterarchiv">Archiv</button></li>
-        <li><button data-route="/rahmung" data-i18n="nav_rahmung">Rahmung</button></li>
-        <li><button data-route="/diplomatie" data-i18n="nav_diplomatie">Diplomatie</button></li>
-      </ul>
-
-      <hr class="nav-divider" />
-
-      <div class="nav-settings">
-        <h3>Einstellungen</h3>
-        <button data-route="/settings">⚙️ Einstellungen öffnen</button>
-      </div>
-    </div>
-  </nav>
 
   <!-- ========== FOOTER INFO ========== -->
   <footer class="app-footer">
