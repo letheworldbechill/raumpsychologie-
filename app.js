@@ -79,15 +79,29 @@ export function showSaveBlink() {
   blink._timer = setTimeout(() => blink.classList.remove("active"), 900);
 }
 
-/* ---------- INITIAL START ---------- */
-showStartOverlay();
-/* ---------- HAMBURGER NAV ---------- */
-const menuBtn = document.getElementById("menu-toggle");
-const navOverlay = document.getElementById("nav-overlay");
-const navClose = document.getElementById("nav-close");
 
-menuBtn.addEventListener("click", () => (navOverlay.hidden = false));
-navClose.addEventListener("click", () => (navOverlay.hidden = true));
-navOverlay.addEventListener("click", (e) => {
-  if (e.target === navOverlay) navOverlay.hidden = true;
-});
+
+ <!-- Hamburger Button -->
+<button id="navToggle" class="hamburger">
+  ☰
+</button>
+
+<!-- Overlay + Drawer -->
+<div id="drawerOverlay" class="overlay"></div>
+
+<nav id="drawer" class="drawer">
+  <button id="closeDrawer" class="close-btn">✕</button>
+
+  <ul class="drawer-nav">
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#wohnung">Wohnung</a></li>
+    <li><a href="#raumscan">RaumScan</a></li>
+    <li><a href="#resonanz">Resonanz</a></li>
+    <li><a href="#bindung">Bindung</a></li>
+    <li><a href="#restladung">Restladung</a></li>
+    <li><a href="#mini-reset">Mini-Reset</a></li>
+    <li><a href="#archiv">Archiv</a></li>
+    <li><a href="#rahmung">Rahmung</a></li>
+    <li><a href="#diplomatie">Diplomatie</a></li>
+  </ul>
+</nav>
