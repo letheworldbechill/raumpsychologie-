@@ -525,3 +525,79 @@ hr.s { border:none; border-top:1px dashed var(--outline); margin:1rem 0; }
   background: var(--accent);
   transform: scale(1.3);
 }
+
+/* Hamburger Icon */
+.hamburger {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1500;
+}
+
+/* Drawer Panel */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -80%;
+  width: 70%;
+  height: 100%;
+  background: var(--bg-elevated);
+  box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+  transition: right 0.25s ease;
+  z-index: 2001;
+  padding: 24px;
+}
+
+/* Open states */
+.drawer.open {
+  right: 0;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.drawer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drawer-nav li {
+  margin-bottom: 16px;
+}
+
+.drawer-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 18px;
+}
