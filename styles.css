@@ -236,28 +236,48 @@ hr.s { border:none; border-top:1px dashed var(--outline); margin:1rem 0; }
   transition: width .4s ease;
 }
 
-/* ---------- START OVERLAY ---------- */
-.start-overlay {
+/* Overlay Fade-In */
+.nav-overlay {
   position: fixed;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 2000;
+}
+
+/* Overlay sichtbar */
+.nav-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Drawer Box */
+.nav-drawer {
+  width: 260px;
+  max-width: 80%;
+  height: 100%;
   background: var(--bg);
-  z-index: 200;
-  animation: overlayFadeIn 1s ease forwards;
+  color: var(--fg);
+  padding: 24px;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.2);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  /* Startposition: komplett nach links geschoben */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
-@keyframes overlayFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+
+/* Drawer sichtbar */
+.nav-overlay.show .nav-drawer {
+  transform: translateX(0);
 }
-.start-overlay.fade-out {
-  animation: overlayFadeOut .6s ease forwards;
-}
-@keyframes overlayFadeOut {
-  from { opacity: 1; transform: none; }
-  to { opacity: 0; transform: scale(.98); }
-}
+
 .start-card {
   text-align: center;
   background: var(--panel);
