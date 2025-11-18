@@ -10,18 +10,42 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body> <!-- Hamburger Button -->
-<button id="navToggle" class="hamburger">
-  ☰
-</button>
+<body>
+  <!-- ========== HAMBURGER MENU OVERLAY ========== -->
+  <nav id="nav-overlay" class="nav-overlay">
+    <div id="nav-drawer" class="nav-drawer">
 
-<!-- Overlay + Drawer -->
-<div id="drawerOverlay" class="overlay"></div>
+        <!-- Header -->
+     <div class="nav-header">
+            <h2>Navigation</h2>
+            <button id="nav-close" class="nav-close" title="Schließen">×</button>
+        </div>
 
-<nav id="drawer" class="drawer">
-  <button id="closeDrawer" class="close-btn">✕</button>
+        <!-- Navigation -->
+        <ul class="nav-main">
+            <li><button data-route="/intro">Intro</button></li>
+            <li><button data-route="/wohnung">Wohnung</button></li>
+            <li><button data-route="/raumscan">RaumScan</button></li>
+            <li><button data-route="/resonanz">Resonanz</button></li>
+            <li><button data-route="/bindung">Bindung</button></li>
+            <li><button data-route="/restladung">Restladung</button></li>
+            <li><button data-route="/minireset">Mini-Reset</button></li>
+            <li><button data-route="/musterarchiv">Archiv</button></li>
+            <li><button data-route="/rahmung">Rahmung</button></li>
+            <li><button data-route="/diplomatie">Diplomatie</button></li>
+        </ul>
 
-  <ul class="drawer-nav">
+        <hr class="nav-divider">
+
+        <!-- Einstellungen -->
+        <div class="nav-settings">
+            <h3>Einstellungen</h3>
+            <button data-route="/settings">⚙️ Einstellungen</button>
+        </div>
+
+    </div>
+  </nav>
+
     <li><a href="#intro">Intro</a></li>
     <li><a href="#wohnung">Wohnung</a></li>
     <li><a href="#raumscan">RaumScan</a></li>
@@ -32,8 +56,8 @@
     <li><a href="#archiv">Archiv</a></li>
     <li><a href="#rahmung">Rahmung</a></li>
     <li><a href="#diplomatie">Diplomatie</a></li>
-  </ul>
-</nav>
+    </ul>
+  </nav>
 
   
   <!-- ========== HEADER ========== -->
