@@ -1,94 +1,40 @@
 <!doctype html>
 <html lang="de">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Raumpsychologie v3 – Klarheit ohne Kampf</title>
-  <meta name="description" content="Eine App für innere und äußere Ordnung, emotionale Selbstführung und friedliche Abgrenzung." />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <meta name="theme-color" content="#0b0c0e" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Eine App für innere und äußere Ordnung, emotionale Selbstführung und friedliche Abgrenzung.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0b0c0e">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
- <!-- Hamburger Button -->
-<button id="navToggle" class="hamburger">
-  ☰
-</button>
-
-<!-- Overlay + Drawer -->
-<div id="drawerOverlay" class="overlay"></div>
-
-<nav id="drawer" class="drawer">
-  <button id="closeDrawer" class="close-btn">✕</button>
-
-  <ul class="drawer-nav">
-    <li><a href="#intro">Intro</a></li>
-    <li><a href="#wohnung">Wohnung</a></li>
-    <li><a href="#raumscan">RaumScan</a></li>
-    <li><a href="#resonanz">Resonanz</a></li>
-    <li><a href="#bindung">Bindung</a></li>
-    <li><a href="#restladung">Restladung</a></li>
-    <li><a href="#mini-reset">Mini-Reset</a></li>
-    <li><a href="#archiv">Archiv</a></li>
-    <li><a href="#rahmung">Rahmung</a></li>
-    <li><a href="#diplomatie">Diplomatie</a></li>
-  </ul>
-</nav>
-
 <body>
-  <!-- ========== HAMBURGER MENU OVERLAY ========== -->
-  <nav id="nav-overlay" class="nav-overlay">
-    <div id="nav-drawer" class="nav-drawer">
+  <!-- ========== HAMBURGER MENU ========== -->
+  <button id="navToggle" class="hamburger">☰</button>
+  <div id="drawerOverlay" class="overlay"></div>
 
-        <!-- Header -->
-     <div class="nav-header">
-            <h2>Navigation</h2>
-            <button id="nav-close" class="nav-close" title="Schließen">×</button>
-        </div>
-
-        <!-- Navigation -->
-        <ul class="nav-main">
-            <li><button data-route="/intro">Intro</button></li>
-            <li><button data-route="/wohnung">Wohnung</button></li>
-            <li><button data-route="/raumscan">RaumScan</button></li>
-            <li><button data-route="/resonanz">Resonanz</button></li>
-            <li><button data-route="/bindung">Bindung</button></li>
-            <li><button data-route="/restladung">Restladung</button></li>
-            <li><button data-route="/minireset">Mini-Reset</button></li>
-            <li><button data-route="/musterarchiv">Archiv</button></li>
-            <li><button data-route="/rahmung">Rahmung</button></li>
-            <li><button data-route="/diplomatie">Diplomatie</button></li>
-        </ul>
-
-        <hr class="nav-divider">
-
-        <!-- Einstellungen -->
-        <div class="nav-settings">
-            <h3>Einstellungen</h3>
-            <button data-route="/settings">⚙️ Einstellungen</button>
-        </div>
-
-    </div>
-  </nav>
-
-    <li><a href="#intro">Intro</a></li>
-    <li><a href="#wohnung">Wohnung</a></li>
-    <li><a href="#raumscan">RaumScan</a></li>
-    <li><a href="#resonanz">Resonanz</a></li>
-    <li><a href="#bindung">Bindung</a></li>
-    <li><a href="#restladung">Restladung</a></li>
-    <li><a href="#mini-reset">Mini-Reset</a></li>
-    <li><a href="#archiv">Archiv</a></li>
-    <li><a href="#rahmung">Rahmung</a></li>
-    <li><a href="#diplomatie">Diplomatie</a></li>
+  <nav id="drawer" class="drawer">
+    <button id="closeDrawer" class="close-btn">✕</button>
+    <ul class="drawer-nav">
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#wohnung">Wohnung</a></li>
+      <li><a href="#raumscan">RaumScan</a></li>
+      <li><a href="#resonanz">Resonanz</a></li>
+      <li><a href="#bindung">Bindung</a></li>
+      <li><a href="#restladung">Restladung</a></li>
+      <li><a href="#mini-reset">Mini-Reset</a></li>
+      <li><a href="#archiv">Archiv</a></li>
+      <li><a href="#rahmung">Rahmung</a></li>
+      <li><a href="#diplomatie">Diplomatie</a></li>
     </ul>
   </nav>
 
-  
-  <!-- ========== HEADER ========== -->
+  <!-- ========== APP HEADER ========== -->
   <header class="app-header">
     <h1>🌿 Raumpsychologie v3</h1>
-
     <div class="toolbar">
       <button id="menu-toggle" class="menu-btn" title="Menü">☰</button>
       <select id="lang" title="Sprache">
@@ -98,9 +44,8 @@
       <button id="theme-toggle" title="Theme">☀︎ / 🌙</button>
       <button id="btn-export" data-i18n="btn_export">Export</button>
       <button id="btn-import" data-i18n="btn_import">Import</button>
-      <input type="file" id="file-import" accept="application/json" style="display:none" />
+      <input type="file" id="file-import" accept="application/json" style="display:none">
     </div>
-
     <div id="save-blink" class="save-blink" title="Gespeichert">💾</div>
   </header>
 
@@ -113,13 +58,20 @@
     <div class="flow-progress" aria-label="Fortschritt">
       <div id="progress-bar" class="progress-bar"></div>
       <div class="steps" aria-hidden="true">
-        <div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div>
-        <div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
       </div>
     </div>
     <button id="next" class="flow-btn" aria-label="Weiter">▶</button>
   </footer>
-
 
   <!-- ========== FOOTER INFO ========== -->
   <footer class="app-footer">
@@ -128,4 +80,5 @@
 
   <script type="module" src="app.js"></script>
 </body>
-              </html>
+
+</html>
